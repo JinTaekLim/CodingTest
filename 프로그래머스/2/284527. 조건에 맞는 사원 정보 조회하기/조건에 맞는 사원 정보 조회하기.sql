@@ -1,0 +1,13 @@
+-- 코드를 작성해주세요
+SELECT
+    (SELECT SUM(A.SCORE) 
+        FROM HR_GRADE A 
+        WHERE A.EMP_NO = B.EMP_NO
+    ) AS SCORE,
+    B.EMP_NO,
+    B.EMP_NAME,
+    B.POSITION,
+    B.EMAIL
+FROM HR_EMPLOYEES B
+ORDER BY SCORE desc
+LIMIT 1
